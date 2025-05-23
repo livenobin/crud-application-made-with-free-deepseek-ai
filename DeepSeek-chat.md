@@ -8,7 +8,7 @@ Here's a comprehensive implementation of a CRUD application with user management
 
 First, let's create the necessary database tables:
 
-```
+```sql
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE `vehicles` (
 
 **application/config/config.php**
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -121,7 +121,7 @@ $config['proxy_ips'] = '';
 
 **application/config/database.php**
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -153,7 +153,7 @@ $db['default'] = array(
 
 **application/config/autoload.php**
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -170,7 +170,7 @@ $autoload['model'] = array('User_model', 'Driver_model', 'Vehicle_model');
 
 **application/models/User\_model.php**
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -225,7 +225,7 @@ class User_model extends CI_Model {
 
 **application/models/Driver\_model.php**
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -268,7 +268,7 @@ class Driver_model extends CI_Model {
 
 **application/models/Vehicle\_model.php**
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -316,7 +316,7 @@ class Vehicle_model extends CI_Model {
 
 **application/controllers/Auth.php** (Login/Logout)
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -374,7 +374,7 @@ class Auth extends CI_Controller {
 
 **application/controllers/Dashboard.php**
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -398,7 +398,7 @@ class Dashboard extends CI_Controller {
 
 **application/controllers/Users.php** (User Management)
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -492,7 +492,7 @@ class Users extends CI_Controller {
 
 **application/controllers/Drivers.php**
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -588,7 +588,7 @@ class Drivers extends CI_Controller {
 
 **application/controllers/Vehicles.php**
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -696,7 +696,7 @@ class Vehicles extends CI_Controller {
 
 **application/views/templates/header.php**
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -777,7 +777,7 @@ class Vehicles extends CI_Controller {
 
 **application/views/templates/footer.php**
 
-```
+```html
             </div>
         </div>
     </div>
@@ -805,7 +805,7 @@ class Vehicles extends CI_Controller {
 
 **application/views/auth/login.php**
 
-```
+```html
 <div class="row justify-content-center mt-5">
     <div class="col-md-4">
         <div class="card">
@@ -838,7 +838,7 @@ class Vehicles extends CI_Controller {
 
 **application/views/dashboard/index.php**
 
-```
+```html
 <h1 class="mb-4">Dashboard</h1>
 <div class="row">
     <div class="col-md-4">
@@ -873,7 +873,7 @@ class Vehicles extends CI_Controller {
 
 **application/views/users/index.php**
 
-```
+```html
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h1>User Management</h1>
     <a href="<?php echo base_url('users/create'); ?>" class="btn btn-primary">Create User</a>
@@ -912,7 +912,7 @@ class Vehicles extends CI_Controller {
 
 **application/views/users/create.php**
 
-```
+```html
 <h1 class="mb-4">Create User</h1>
 
 <div class="card">
@@ -950,7 +950,7 @@ class Vehicles extends CI_Controller {
 
 **application/views/users/edit.php**
 
-```
+```html
 <h1 class="mb-4">Edit User</h1>
 
 <div class="card">
@@ -984,7 +984,7 @@ class Vehicles extends CI_Controller {
 
 **application/views/drivers/index.php**
 
-```
+```html
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h1>Driver Management</h1>
     <a href="<?php echo base_url('drivers/create'); ?>" class="btn btn-primary">Create Driver</a>
@@ -1030,7 +1030,7 @@ class Vehicles extends CI_Controller {
 
 **application/views/drivers/create.php**
 
-```
+```html
 <h1 class="mb-4">Create Driver</h1>
 
 <div class="card">
@@ -1068,7 +1068,7 @@ class Vehicles extends CI_Controller {
 
 **application/views/drivers/edit.php**
 
-```
+```html
 <h1 class="mb-4">Edit Driver</h1>
 
 <div class="card">
@@ -1106,7 +1106,7 @@ class Vehicles extends CI_Controller {
 
 **application/views/drivers/view.php**
 
-```
+```html
 <h1 class="mb-4">Driver Details</h1>
 
 <div class="card">
@@ -1147,7 +1147,7 @@ class Vehicles extends CI_Controller {
 
 **application/views/vehicles/index.php**
 
-```
+```html
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h1>Vehicle Management</h1>
     <a href="<?php echo base_url('vehicles/create'); ?>" class="btn btn-primary">Create Vehicle</a>
@@ -1200,7 +1200,7 @@ class Vehicles extends CI_Controller {
 
 **application/views/vehicles/create.php**
 
-```
+```html
 <h1 class="mb-4">Create Vehicle</h1>
 
 <div class="card">
@@ -1252,7 +1252,7 @@ class Vehicles extends CI_Controller {
 
 **application/views/vehicles/edit.php**
 
-```
+```html
 <h1 class="mb-4">Edit Vehicle</h1>
 
 <div class="card">
@@ -1306,7 +1306,7 @@ class Vehicles extends CI_Controller {
 
 **application/views/vehicles/view.php**
 
-```
+```html
 <h1 class="mb-4">Vehicle Details</h1>
 
 <div class="card">
@@ -1360,7 +1360,7 @@ class Vehicles extends CI_Controller {
 
 **application/config/routes.php**
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -1480,7 +1480,7 @@ This response is AI-generated, for reference only.
 
 Here's the `.htaccess` code for your CodeIgniter 3 application that will handle URL rewriting, remove the `index.php` from URLs, and add some basic security measures:
 
-```
+```shell
 <IfModule mod_rewrite.c>
     RewriteEngine On
     
@@ -1573,7 +1573,7 @@ AddDefaultCharset UTF-8
     
 6.  **CodeIgniter Config**: Make sure your `application/config/config.php` has:
     
-    ```
+    ```php
     $config['index_page'] = '';
     $config['uri_protocol'] = 'REQUEST_URI';
     ```
@@ -1602,7 +1602,7 @@ To ensure the login page doesn't show the header and footer (which likely contai
 
 Remove the header/footer includes and create a standalone login page:
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1666,7 +1666,7 @@ Remove the header/footer includes and create a standalone login page:
 
 Make sure your Auth controller doesn't load the header/footer templates:
 
-```
+```php
 public function index() {
     if($this->session->userdata('logged_in')) {
         redirect('dashboard');
@@ -1710,7 +1710,7 @@ public function login() {
 
 Ensure other controllers properly load the templates:
 
-```
+```php
 public function index() {
     if(!$this->session->userdata('logged_in')) {
         redirect('auth');
@@ -1757,7 +1757,7 @@ I'll enhance your existing application with a comprehensive role and permission 
 
 First, let's add the necessary tables for RBAC:
 
-```
+```sql
 CREATE TABLE `permissions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -1830,7 +1830,7 @@ UPDATE `users` SET `role_id` = 1 WHERE `username` = 'admin';
 
 **application/models/Role\_model.php**
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -1870,7 +1870,7 @@ class Role_model extends CI_Model {
 
 **application/models/Permission\_model.php**
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -1893,7 +1893,7 @@ class Permission_model extends CI_Model {
 
 ## 3\. Update User\_model.php
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -1959,7 +1959,7 @@ class User_model extends CI_Model {
 
 **application/core/MY\_Controller.php**
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -2022,7 +2022,7 @@ Example for Users controller:
 
 **application/controllers/Users.php**
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -2119,7 +2119,7 @@ class Users extends MY_Controller {
 
 Example for users/index.php:
 
-```
+```html
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h1>User Management</h1>
     <?php if(in_array('create_users', $user_permissions)): ?>
@@ -2164,7 +2164,7 @@ Example for users/index.php:
 
 ## 7\. Update Sidebar Menu (templates/header.php)
 
-```
+```html
 <ul class="nav flex-column">
     <li class="nav-item">
         <a class="nav-link <?php echo (strpos(current_url(), 'dashboard') !== false ? 'active' : ''; ?>" href="<?php echo base_url('dashboard'); ?>">
@@ -2202,7 +2202,7 @@ Example for users/index.php:
 
 ## 8\. Update Auth Controller for Role Handling
 
-```
+```php
 public function login() {
     $this->form_validation->set_rules('username', 'Username', 'required');
     $this->form_validation->set_rules('password', 'Password', 'required');
@@ -2249,7 +2249,7 @@ public function login() {
 
 **application/controllers/Roles.php**
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -2300,7 +2300,7 @@ class Roles extends MY_Controller {
 
 **application/views/roles/index.php**
 
-```
+```html
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h1>Role Management</h1>
 </div>
@@ -2337,7 +2337,7 @@ class Roles extends MY_Controller {
 
 **application/views/roles/edit.php**
 
-```
+```html
 <h1 class="mb-4">Edit Role: <?php echo $role->name; ?></h1>
 
 <div class="card">
@@ -2377,7 +2377,7 @@ class Roles extends MY_Controller {
 
 ## 10\. Update Routes
 
-```
+```php
 $route['roles'] = 'roles';
 $route['roles/edit/(:num)'] = 'roles/edit/$1';
 ```
@@ -2427,7 +2427,7 @@ The error occurs because the `$user_permissions` variable isn't being passed to 
 
 Modify the `render()` method in your MY\_Controller to always pass the user permissions:
 
-```
+```javascript
 protected function render($view, $data = array()) {
     
     $data['user_role'] = $this->session->userdata('role');
@@ -2443,7 +2443,7 @@ protected function render($view, $data = array()) {
 
 Ensure permissions are properly set during login:
 
-```
+```php
 public function login() {
     
     
@@ -2477,7 +2477,7 @@ public function login() {
 
 Make sure you're using the `render()` method from MY\_Controller:
 
-```
+```php
 public function index() {
     $data['title'] = 'Dashboard';
     $this->render('dashboard/index', $data);
@@ -2488,7 +2488,7 @@ public function index() {
 
 As an additional safety measure, add this at the top of your header.php:
 
-```
+```php
 <?php 
 
 if (!isset($user_permissions)) {
@@ -2510,7 +2510,7 @@ Make sure all your controllers:
 
 Example for Drivers controller:
 
-```
+```php
 class Drivers extends MY_Controller {
     public function __construct() {
         parent::__construct();
@@ -2539,7 +2539,7 @@ class Drivers extends MY_Controller {
 
 1.  **Error Logging**: Add error logging to track when permissions aren't set properly:
     
-    ```
+    ```php
     if (!isset($user_permissions)) {
         log_message('error', 'User permissions not set in view');
         $user_permissions = array();
@@ -2561,7 +2561,7 @@ I'll help you adjust the user edit/create pages with role selection, add role ma
 
 **application/views/users/create.php**
 
-```
+```html
 <h1 class="mb-4">Create User</h1>
 
 <div class="card">
@@ -2600,7 +2600,7 @@ I'll help you adjust the user edit/create pages with role selection, add role ma
 
 **application/views/users/edit.php**
 
-```
+```html
 <h1 class="mb-4">Edit User</h1>
 
 <div class="card">
@@ -2639,7 +2639,7 @@ I'll help you adjust the user edit/create pages with role selection, add role ma
 
 **application/views/roles/index.php**
 
-```
+```html
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h1>Role Management</h1>
     <?php if(in_array('create_roles', $user_permissions)): ?>
@@ -2685,7 +2685,7 @@ I'll help you adjust the user edit/create pages with role selection, add role ma
 
 **application/views/roles/create.php**
 
-```
+```html
 <h1 class="mb-4">Create Role</h1>
 
 <div class="card">
@@ -2708,7 +2708,7 @@ I'll help you adjust the user edit/create pages with role selection, add role ma
 
 **application/views/roles/edit.php**
 
-```
+```html
 <h1 class="mb-4">Edit Role</h1>
 
 <div class="card">
@@ -2731,7 +2731,7 @@ I'll help you adjust the user edit/create pages with role selection, add role ma
 
 **application/views/roles/permissions.php**
 
-```
+```html
 <h1 class="mb-4">Manage Permissions for Role: <?php echo $role->name; ?></h1>
 
 <div class="card">
@@ -2773,7 +2773,7 @@ I'll help you adjust the user edit/create pages with role selection, add role ma
 
 **application/controllers/Roles.php**
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -2879,7 +2879,7 @@ class Roles extends MY_Controller {
 
 **application/models/Role\_model.php**
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -2935,7 +2935,7 @@ class Role_model extends CI_Model {
 
 **application/views/templates/header.php**
 
-```
+```html
 <ul class="nav flex-column">
     <li class="nav-item">
         <a class="nav-link <?php echo (strpos(current_url(), 'dashboard') !== false ? 'active' : ''; ?>" href="<?php echo base_url('dashboard'); ?>">
@@ -2982,7 +2982,7 @@ class Role_model extends CI_Model {
 
 **application/config/routes.php**
 
-```
+```php
 $route['roles'] = 'roles';
 $route['roles/create'] = 'roles/create';
 $route['roles/edit/(:num)'] = 'roles/edit/$1';
@@ -2994,7 +2994,7 @@ $route['roles/delete/(:num)'] = 'roles/delete/$1';
 
 Run these SQL queries to add the new permissions for role management:
 
-```
+```sql
 INSERT INTO `permissions` (`name`, `description`) VALUES
 ('view_roles', 'View role list'),
 ('create_roles', 'Create new roles'),
@@ -3055,7 +3055,7 @@ I'll enhance your sidebar to be fully responsive and mobile-friendly with a coll
 
 ## 1\. Update the Header Template (header.php)
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -3229,7 +3229,7 @@ I'll enhance your sidebar to be fully responsive and mobile-friendly with a coll
 
 ## 2\. Update the Footer Template (footer.php)
 
-```
+```html
     </div> <!-- Close main-content div -->
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
@@ -3335,7 +3335,7 @@ I'll enhance your sidebar to be fully responsive and mobile-friendly with a coll
 
 1.  **Persistent State** (optional):
     
-    ```
+    ```javascript
     $('#sidebarToggle').click(function() {
         const isActive = $('#sidebar').toggleClass('active').hasClass('active');
         $('#mainContent').toggleClass('active');
@@ -3351,7 +3351,7 @@ I'll enhance your sidebar to be fully responsive and mobile-friendly with a coll
     
 2.  **Touch Gestures** (optional):
     
-    ```
+    ```javascript
     let touchStartX = 0;
     let touchEndX = 0;
     
@@ -3371,7 +3371,7 @@ I'll enhance your sidebar to be fully responsive and mobile-friendly with a coll
 3.  **Loading Indicator** (optional):  
     Add this to your header.php before the closing `</head>` tag:
     
-    ```
+    ```css
     <style>
         .page-loader {
             position: fixed;
@@ -3402,7 +3402,7 @@ I'll enhance your sidebar to be fully responsive and mobile-friendly with a coll
     
     Add this before the closing `</body>` tag in footer.php:
     
-    ```
+    ```html
     <div class="page-loader" id="pageLoader">
         <div class="spinner"></div>
     </div>
@@ -3440,13 +3440,13 @@ To make your DataTables responsive, you have several options. I'll show you the 
 
 Update your header.php to include the Responsive extension files:
 
-```
+```html
 <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
 ```
 
 Update your footer.php to include the JS:
 
-```
+```html
 <!-- After jQuery and DataTables JS -->
 <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
 ```
@@ -3455,7 +3455,7 @@ Update your footer.php to include the JS:
 
 Modify your DataTables initialization code:
 
-```
+```javascript
 $(document).ready(function() {
     $('.table').DataTable({
         responsive: true,
@@ -3470,7 +3470,7 @@ If you prefer not to use the DataTables extension, you can use Bootstrap's respo
 
 ### 1\. Wrap your table in a responsive div
 
-```
+```html
 <div class="table-responsive">
     <table class="table table-striped table-hover">
         <!-- table content -->
@@ -3480,7 +3480,7 @@ If you prefer not to use the DataTables extension, you can use Bootstrap's respo
 
 ### 2\. Adjust DataTables initialization
 
-```
+```javascript
 $(document).ready(function() {
     $('.table').DataTable({
         scrollX: true,  
@@ -3494,7 +3494,7 @@ $(document).ready(function() {
 
 For more control over responsive behavior:
 
-```
+```javascript
 $(document).ready(function() {
     $('.table').DataTable({
         responsive: {
@@ -3525,13 +3525,13 @@ Here's the complete implementation I recommend for your CodeIgniter project:
 
 ### 1\. Update header.php
 
-```
+```html
 <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
 ```
 
 ### 2\. Update footer.php
 
-```
+```html
 <!-- Add these after the main DataTables JS -->
 <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
 
@@ -3579,7 +3579,7 @@ $(document).ready(function() {
 
 Make sure your tables have this structure:
 
-```
+```html
 <table class="table table-striped table-hover dt-responsive nowrap" style="width:100%">
     <thead>
         <tr>
@@ -3614,7 +3614,7 @@ Make sure your tables have this structure:
 
 ### Hide Columns on Mobile
 
-```
+```javascript
 columnDefs: [
     { 
         targets: [3, 4], 
@@ -3626,7 +3626,7 @@ columnDefs: [
 
 ### Different Breakpoints
 
-```
+```javascript
 responsive: {
     breakpoints: [
         { name: 'desktop', width: Infinity },
@@ -3638,7 +3638,7 @@ responsive: {
 
 ### Custom Child Row Rendering
 
-```
+```javascript
 responsive: {
     details: {
         renderer: function(api, rowIdx, columns) {
@@ -3671,7 +3671,7 @@ The issue with your hamburger menu not working on mobile devices is likely due t
 
 First, ensure you have these key elements in your `header.php`:
 
-```
+```html
 <button class="sidebar-toggle" id="sidebarToggle">
     <i class="bi bi-list"></i>
 </button>
@@ -3691,7 +3691,7 @@ First, ensure you have these key elements in your `header.php`:
 
 In your `footer.php`, replace the existing sidebar toggle code with this enhanced version:
 
-```
+```javascript
 $(document).ready(function() {
     
     $('#sidebarToggle').on('click', function(e) {
@@ -3730,7 +3730,7 @@ $(document).ready(function() {
 
 Ensure you have these critical styles in your `header.php`:
 
-```
+```css
 @media (max-width: 768px) {
     .sidebar {
         margin-left: -250px;
@@ -3777,7 +3777,7 @@ Ensure you have these critical styles in your `header.php`:
     
 -   **Fix**:
     
-    ```
+    ```css
     .sidebar { z-index: 1000; }
     .sidebar-toggle { z-index: 1100; }
     ```
@@ -3796,7 +3796,7 @@ Ensure you have these critical styles in your `header.php`:
     
 -   **Fix**:
     
-    ```
+    ```css
     .sidebar { 
         width: 250px;
         margin-left: -250px; 
@@ -3817,7 +3817,7 @@ Here's a verified working version:
 
 **header.php**
 
-```
+```html
 <style>
     /* Sidebar styles */
     .sidebar {
@@ -3874,7 +3874,7 @@ Here's a verified working version:
 
 **footer.php**
 
-```
+```html
 <script>
 $(document).ready(function() {
     
@@ -3908,13 +3908,13 @@ $(document).ready(function() {
 
 1.  **Viewport Meta Tag**: Ensure you have this in your `<head>`
     
-    ```
+    ```html
     <meta name="viewport" content="width=device-width, initial-scale=1">
     ```
     
 2.  **jQuery Loading**: Verify jQuery loads before your scripts
     
-    ```
+    ```html
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     ```
     
@@ -3946,7 +3946,7 @@ To adjust the heading position on mobile view so it doesn't hide behind the hamb
 
 Add these styles to your existing media query:
 
-```
+```css
 @media (max-width: 768px) {
     
     
@@ -3973,7 +3973,7 @@ Add these styles to your existing media query:
 
 Ensure your main content has the proper classes:
 
-```
+```html
 <button class="sidebar-toggle" id="sidebarToggle">
     <i class="bi bi-list"></i>
 </button>
@@ -3995,7 +3995,7 @@ Ensure your main content has the proper classes:
 
 Modify your existing script to handle the new margin:
 
-```
+```javascript
 $(document).ready(function() {
     
     $('#sidebarToggle').on('click', function(e) {
@@ -4030,7 +4030,7 @@ $(document).ready(function() {
 
 If you want more precise control over just the heading (not all content), use this instead:
 
-```
+```css
 @media (max-width: 768px) {
     
     .main-content h1, 
@@ -4066,7 +4066,7 @@ Here's the complete implementation that ensures proper spacing:
 
 **header.php CSS additions:**
 
-```
+```css
 @media (max-width: 768px) {
     
     .page-header {
@@ -4115,7 +4115,7 @@ Here's the complete implementation that ensures proper spacing:
 
 **HTML Structure:**
 
-```
+```html
 <div class="page-header d-block d-md-none">
     <button class="sidebar-toggle" id="sidebarToggle">
         <i class="bi bi-list"></i>
